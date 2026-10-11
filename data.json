@@ -1,0 +1,905 @@
+{
+  "crops": {
+    "rice": {
+      "category": "cereal",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 1200,
+      "base_yield_kg_ha": 2873,
+      "other_cost_per_ha": 37400,
+      "price_per_kg": 24.41,
+      "sensitivity": 1.09,
+      "sowing_months": [6, 7],
+      "ok_months": [5, 8],
+      "duration_days": 130,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27",
+        "yield": "Economic Survey 2023-24",
+        "cost": "MSP-margin method (CACP)",
+        "water": "ICAR-IIWM / CROPWAT studies",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "maize": {
+      "category": "cereal",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 500,
+      "base_yield_kg_ha": 3321,
+      "other_cost_per_ha": 41000,
+      "price_per_kg": 24.1,
+      "sensitivity": 1.25,
+      "sowing_months": [6, 7],
+      "ok_months": [10, 11, 2, 3],
+      "duration_days": 100,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27",
+        "yield": "Economic Survey 2023-24",
+        "cost": "MSP-margin method (CACP)",
+        "water": "team assumption",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "millet": {
+      "category": "cereal",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 350,
+      "base_yield_kg_ha": 1449,
+      "other_cost_per_ha": 21500,
+      "price_per_kg": 29.0,
+      "sensitivity": 0.6,
+      "sowing_months": [6, 7],
+      "ok_months": [5, 8],
+      "duration_days": 90,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27 (bajra)",
+        "yield": "Economic Survey 2023-24",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "team assumption"
+      }
+    },
+    "wheat": {
+      "category": "cereal",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 450,
+      "base_yield_kg_ha": 3500,
+      "other_cost_per_ha": 35500,
+      "price_per_kg": 26.1,
+      "sensitivity": 1.15,
+      "sowing_months": [11],
+      "ok_months": [10, 12],
+      "duration_days": 130,
+      "perennial": false,
+      "basis": {
+        "price": "MSP rabi 2027-28",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "sorghum": {
+      "category": "cereal",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 450,
+      "base_yield_kg_ha": 1100,
+      "other_cost_per_ha": 23600,
+      "price_per_kg": 40.23,
+      "sensitivity": 0.9,
+      "sowing_months": [6, 7],
+      "ok_months": [9, 10],
+      "duration_days": 110,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27 (jowar hybrid)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "chickpea": {
+      "category": "pulse",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 300,
+      "base_yield_kg_ha": 1150,
+      "other_cost_per_ha": 34500,
+      "price_per_kg": 59.58,
+      "sensitivity": 0.9,
+      "sowing_months": [10, 11],
+      "ok_months": [12],
+      "duration_days": 110,
+      "perennial": false,
+      "basis": {
+        "price": "MSP rabi 2027-28 (gram)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "pigeonpeas": {
+      "category": "pulse",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 500,
+      "base_yield_kg_ha": 850,
+      "other_cost_per_ha": 37300,
+      "price_per_kg": 84.5,
+      "sensitivity": 0.9,
+      "sowing_months": [6, 7],
+      "ok_months": [],
+      "duration_days": 160,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27 (tur)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "mungbean": {
+      "category": "pulse",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 300,
+      "base_yield_kg_ha": 550,
+      "other_cost_per_ha": 24000,
+      "price_per_kg": 87.8,
+      "sensitivity": 1.0,
+      "sowing_months": [6, 7],
+      "ok_months": [2, 3, 4],
+      "duration_days": 65,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27 (moong)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "blackgram": {
+      "category": "pulse",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 300,
+      "base_yield_kg_ha": 600,
+      "other_cost_per_ha": 26200,
+      "price_per_kg": 82.0,
+      "sensitivity": 1.0,
+      "sowing_months": [6, 7],
+      "ok_months": [2, 3, 9, 10],
+      "duration_days": 75,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27 (urad)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "lentil": {
+      "category": "pulse",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 250,
+      "base_yield_kg_ha": 900,
+      "other_cost_per_ha": 27700,
+      "price_per_kg": 73.9,
+      "sensitivity": 0.9,
+      "sowing_months": [10, 11],
+      "ok_months": [12],
+      "duration_days": 115,
+      "perennial": false,
+      "basis": {
+        "price": "MSP rabi 2027-28 (masur)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "mothbeans": {
+      "category": "pulse",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 250,
+      "base_yield_kg_ha": 450,
+      "other_cost_per_ha": 15000,
+      "price_per_kg": 70.0,
+      "sensitivity": 0.8,
+      "sowing_months": [7],
+      "ok_months": [6, 8],
+      "duration_days": 75,
+      "perennial": false,
+      "basis": {
+        "price": "estimate (no MSP)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "kidneybeans": {
+      "category": "pulse",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 400,
+      "base_yield_kg_ha": 1000,
+      "other_cost_per_ha": 40000,
+      "price_per_kg": 100.0,
+      "sensitivity": 1.15,
+      "sowing_months": [10],
+      "ok_months": [9, 11],
+      "duration_days": 100,
+      "perennial": false,
+      "note": "Plains rabi crop. In hills it is sown May-June.",
+      "basis": {
+        "price": "estimate (no MSP)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "groundnut": {
+      "category": "oilseed",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 500,
+      "base_yield_kg_ha": 1900,
+      "other_cost_per_ha": 76200,
+      "price_per_kg": 75.17,
+      "sensitivity": 0.7,
+      "sowing_months": [6, 7],
+      "ok_months": [1, 2, 10, 11],
+      "duration_days": 120,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27 (pods)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "soybean": {
+      "category": "oilseed",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 450,
+      "base_yield_kg_ha": 1100,
+      "other_cost_per_ha": 33500,
+      "price_per_kg": 57.08,
+      "sensitivity": 0.85,
+      "sowing_months": [6, 7],
+      "ok_months": [],
+      "duration_days": 100,
+      "perennial": false,
+      "basis": {
+        "price": "MSP kharif 2026-27",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "mustard": {
+      "category": "oilseed",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 300,
+      "base_yield_kg_ha": 1450,
+      "other_cost_per_ha": 39100,
+      "price_per_kg": 66.13,
+      "sensitivity": 0.85,
+      "sowing_months": [10],
+      "ok_months": [11],
+      "duration_days": 120,
+      "perennial": false,
+      "basis": {
+        "price": "MSP rabi 2027-28 (rapeseed-mustard)",
+        "yield": "approx. national average (verify)",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "cotton": {
+      "category": "cash crop",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 800,
+      "base_yield_kg_ha": 1400,
+      "other_cost_per_ha": 61700,
+      "price_per_kg": 82.67,
+      "sensitivity": 0.85,
+      "sowing_months": [5, 6],
+      "ok_months": [7],
+      "duration_days": 170,
+      "perennial": false,
+      "note": "Yield and price are for seed cotton (kapas), not lint.",
+      "basis": {
+        "price": "MSP kharif 2026-27 (kapas, medium staple)",
+        "yield": "approx. national average (verify); seed cotton",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "sugarcane": {
+      "category": "cash crop",
+      "season": "year_round",
+      "cycle": "year",
+      "water_req_mm": 1800,
+      "base_yield_kg_ha": 80000,
+      "other_cost_per_ha": 116500,
+      "price_per_kg": 3.65,
+      "sensitivity": 1.2,
+      "sowing_months": [2, 3, 10],
+      "ok_months": [1, 9, 11],
+      "duration_days": 360,
+      "perennial": false,
+      "note": "Enter yearly rainfall: this crop stays in the field about 12 months.",
+      "basis": {
+        "price": "FRP 2026-27 (Rs 365/qtl at 10.25% recovery)",
+        "yield": "approx. national average (verify)",
+        "cost": "A2+FL Rs 182/qtl x yield x 0.8 (FRP notice)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "jute": {
+      "category": "cash crop",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 500,
+      "base_yield_kg_ha": 2700,
+      "other_cost_per_ha": 79100,
+      "price_per_kg": 59.25,
+      "sensitivity": 0.9,
+      "sowing_months": [3, 4],
+      "ok_months": [5],
+      "duration_days": 120,
+      "perennial": false,
+      "basis": {
+        "price": "MSP raw jute TD-3 2026-27",
+        "yield": "approx. national average (verify); fibre",
+        "cost": "MSP-margin method (CACP)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "tomato": {
+      "category": "vegetable",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 600,
+      "base_yield_kg_ha": 19000,
+      "other_cost_per_ha": 150000,
+      "price_per_kg": 12.0,
+      "sensitivity": 1.05,
+      "sowing_months": [10, 11],
+      "ok_months": [6, 7, 1],
+      "duration_days": 120,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "NHB 2022-23 productivity",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "potato": {
+      "category": "vegetable",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 500,
+      "base_yield_kg_ha": 24000,
+      "other_cost_per_ha": 140000,
+      "price_per_kg": 12.0,
+      "sensitivity": 1.1,
+      "sowing_months": [10, 11],
+      "ok_months": [9, 12],
+      "duration_days": 100,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "onion": {
+      "category": "vegetable",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 450,
+      "base_yield_kg_ha": 17000,
+      "other_cost_per_ha": 120000,
+      "price_per_kg": 14.0,
+      "sensitivity": 1.1,
+      "sowing_months": [10, 11],
+      "ok_months": [6, 7, 12],
+      "duration_days": 130,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "brinjal": {
+      "category": "vegetable",
+      "season": "year_round",
+      "cycle": "season",
+      "water_req_mm": 600,
+      "base_yield_kg_ha": 18000,
+      "other_cost_per_ha": 100000,
+      "price_per_kg": 15.0,
+      "sensitivity": 1.05,
+      "sowing_months": [6, 7, 11],
+      "ok_months": [2, 3, 10],
+      "duration_days": 150,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "NHB 2022-23 productivity",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "okra": {
+      "category": "vegetable",
+      "season": "year_round",
+      "cycle": "season",
+      "water_req_mm": 500,
+      "base_yield_kg_ha": 12000,
+      "other_cost_per_ha": 70000,
+      "price_per_kg": 25.0,
+      "sensitivity": 1.0,
+      "sowing_months": [2, 3, 6, 7],
+      "ok_months": [1, 4],
+      "duration_days": 95,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "cabbage": {
+      "category": "vegetable",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 450,
+      "base_yield_kg_ha": 22000,
+      "other_cost_per_ha": 85000,
+      "price_per_kg": 9.0,
+      "sensitivity": 0.95,
+      "sowing_months": [9, 10],
+      "ok_months": [8, 11],
+      "duration_days": 100,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "NHB 2022-23 productivity",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "cauliflower": {
+      "category": "vegetable",
+      "season": "rabi",
+      "cycle": "season",
+      "water_req_mm": 450,
+      "base_yield_kg_ha": 21000,
+      "other_cost_per_ha": 90000,
+      "price_per_kg": 14.0,
+      "sensitivity": 0.95,
+      "sowing_months": [8, 9],
+      "ok_months": [10],
+      "duration_days": 110,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "chilli": {
+      "category": "vegetable",
+      "season": "kharif",
+      "cycle": "season",
+      "water_req_mm": 600,
+      "base_yield_kg_ha": 10000,
+      "other_cost_per_ha": 120000,
+      "price_per_kg": 30.0,
+      "sensitivity": 1.1,
+      "sowing_months": [6, 7],
+      "ok_months": [9, 10],
+      "duration_days": 160,
+      "perennial": false,
+      "note": "Yield and price are for green chilli.",
+      "basis": {
+        "price": "estimate: green chilli farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "watermelon": {
+      "category": "fruit",
+      "season": "zaid",
+      "cycle": "season",
+      "water_req_mm": 450,
+      "base_yield_kg_ha": 25000,
+      "other_cost_per_ha": 60000,
+      "price_per_kg": 9.0,
+      "sensitivity": 1.1,
+      "sowing_months": [1, 2],
+      "ok_months": [3, 11, 12],
+      "duration_days": 90,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "muskmelon": {
+      "category": "fruit",
+      "season": "zaid",
+      "cycle": "season",
+      "water_req_mm": 400,
+      "base_yield_kg_ha": 20000,
+      "other_cost_per_ha": 65000,
+      "price_per_kg": 14.0,
+      "sensitivity": 1.0,
+      "sowing_months": [1, 2, 3],
+      "ok_months": [11, 12],
+      "duration_days": 85,
+      "perennial": false,
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "banana": {
+      "category": "fruit",
+      "season": "year_round",
+      "cycle": "year",
+      "water_req_mm": 1800,
+      "base_yield_kg_ha": 35000,
+      "other_cost_per_ha": 180000,
+      "price_per_kg": 14.0,
+      "sensitivity": 1.2,
+      "sowing_months": [2, 3, 6, 7],
+      "ok_months": [1, 8],
+      "duration_days": 330,
+      "perennial": false,
+      "note": "Enter yearly rainfall. Yield is for the first crop after planting.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "papaya": {
+      "category": "fruit",
+      "season": "year_round",
+      "cycle": "year",
+      "water_req_mm": 1500,
+      "base_yield_kg_ha": 40000,
+      "other_cost_per_ha": 140000,
+      "price_per_kg": 9.0,
+      "sensitivity": 1.0,
+      "sowing_months": [6, 7, 9, 10],
+      "ok_months": [2, 3],
+      "duration_days": 300,
+      "perennial": false,
+      "note": "Enter yearly rainfall.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "mango": {
+      "category": "fruit",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 900,
+      "base_yield_kg_ha": 8500,
+      "other_cost_per_ha": 45000,
+      "price_per_kg": 35.0,
+      "sensitivity": 0.8,
+      "sowing_months": [7, 8],
+      "ok_months": [6, 9],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 5,
+      "harvest_months": [4, 5, 6],
+      "note": "Yield is for a mature orchard. Establishment years are not modelled.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "guava": {
+      "category": "fruit",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 900,
+      "base_yield_kg_ha": 12500,
+      "other_cost_per_ha": 60000,
+      "price_per_kg": 22.0,
+      "sensitivity": 0.9,
+      "sowing_months": [7, 8],
+      "ok_months": [2, 3, 6, 9],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 3,
+      "harvest_months": [8, 9, 10, 12, 1, 2],
+      "note": "Yield is for a mature orchard. Establishment years are not modelled.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "pomegranate": {
+      "category": "fruit",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 700,
+      "base_yield_kg_ha": 10000,
+      "other_cost_per_ha": 120000,
+      "price_per_kg": 55.0,
+      "sensitivity": 0.8,
+      "sowing_months": [7, 8],
+      "ok_months": [2, 3, 6, 9],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 3,
+      "harvest_months": [9, 10, 11],
+      "note": "Yield is for a mature orchard. Establishment years are not modelled.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "grapes": {
+      "category": "fruit",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 650,
+      "base_yield_kg_ha": 25000,
+      "other_cost_per_ha": 300000,
+      "price_per_kg": 45.0,
+      "sensitivity": 0.85,
+      "sowing_months": [1, 2],
+      "ok_months": [12, 3],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 2,
+      "harvest_months": [2, 3, 4],
+      "note": "Yield is for a mature vineyard. Establishment years are not modelled.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "FAO-33 Ky (verify)"
+      }
+    },
+    "orange": {
+      "category": "fruit",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 1000,
+      "base_yield_kg_ha": 10000,
+      "other_cost_per_ha": 65000,
+      "price_per_kg": 30.0,
+      "sensitivity": 0.95,
+      "sowing_months": [7, 8],
+      "ok_months": [2, 3, 6, 9],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 4,
+      "harvest_months": [11, 12, 1, 2],
+      "note": "Yield is for a mature orchard. Establishment years are not modelled.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "apple": {
+      "category": "fruit",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 800,
+      "base_yield_kg_ha": 8500,
+      "other_cost_per_ha": 150000,
+      "price_per_kg": 70.0,
+      "sensitivity": 1.0,
+      "sowing_months": [12, 1, 2],
+      "ok_months": [11, 3],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 5,
+      "harvest_months": [8, 9, 10],
+      "note": "Cool hill regions only. Yield is for a mature orchard.",
+      "basis": {
+        "price": "estimate: typical farm-gate average (volatile)",
+        "yield": "approx. national average (verify)",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "coconut": {
+      "category": "plantation",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 1800,
+      "base_yield_kg_ha": 1700,
+      "other_cost_per_ha": 45000,
+      "price_per_kg": 120.0,
+      "sensitivity": 0.8,
+      "sowing_months": [6, 7],
+      "ok_months": [5, 8, 9],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 6,
+      "harvest_months": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      "note": "Yield and price are for copra. Establishment years are not modelled.",
+      "basis": {
+        "price": "estimate: copra price (verify against copra MSP)",
+        "yield": "estimate: copra kg/ha",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    },
+    "coffee": {
+      "category": "plantation",
+      "season": "perennial",
+      "cycle": "year",
+      "water_req_mm": 1200,
+      "base_yield_kg_ha": 800,
+      "other_cost_per_ha": 90000,
+      "price_per_kg": 300.0,
+      "sensitivity": 0.9,
+      "sowing_months": [6, 7],
+      "ok_months": [5, 8],
+      "duration_days": 0,
+      "perennial": true,
+      "years_to_bearing": 3,
+      "harvest_months": [11, 12, 1, 2],
+      "note": "Establishment years are not modelled.",
+      "basis": {
+        "price": "estimate: clean coffee price (volatile)",
+        "yield": "estimate: clean coffee kg/ha",
+        "cost": "estimate (verify)",
+        "water": "typical seasonal need, approx. (FAO/ICAR/TNAU ranges)",
+        "sensitivity": "estimate (verify)"
+      }
+    }
+  },
+  "irrigation": {
+    "flood": {
+      "efficiency": 0.4,
+      "cost_per_mm_ha": 8,
+      "fixed_cost_per_ha": 0
+    },
+    "alternate_wet_dry": {
+      "efficiency": 0.5,
+      "cost_per_mm_ha": 8,
+      "fixed_cost_per_ha": 0
+    },
+    "drip": {
+      "efficiency": 0.85,
+      "cost_per_mm_ha": 8,
+      "fixed_cost_per_ha": 14000
+    },
+    "furrow": {
+      "efficiency": 0.55,
+      "cost_per_mm_ha": 8,
+      "fixed_cost_per_ha": 0
+    },
+    "sprinkler": {
+      "efficiency": 0.75,
+      "cost_per_mm_ha": 8,
+      "fixed_cost_per_ha": 6000
+    }
+  },
+  "soil": {
+    "clay": {
+      "rain_factor": 1.0
+    },
+    "black": {
+      "rain_factor": 1.0
+    },
+    "loam": {
+      "rain_factor": 0.95
+    },
+    "sandy": {
+      "rain_factor": 0.8
+    },
+    "alluvial": {
+      "rain_factor": 0.95
+    },
+    "red": {
+      "rain_factor": 0.85
+    },
+    "laterite": {
+      "rain_factor": 0.8
+    }
+  },
+  "sources": [
+    "Prices: MSP 2026-27 (Cabinet, 13 May 2026)",
+    "Yields: Economic Survey 2023-24, Table 1.17",
+    "Rice water need: ICAR-IIWM / CROPWAT studies",
+    "Irrigation efficiency: India Water Portal; drip cost: PMKSY",
+    "Costs derived from MSP margin over A2+FL cost (CACP method)",
+    "Maize water need, millet sensitivity, pumping cost: team assumptions",
+    "Kharif prices: MSP 2026-27 (CCEA, 13 May 2026); margins: moong 61%, bajra and maize 56%, tur 54%, others 50%",
+    "Rabi prices: MSP 2027-28 (CCEA, 30 Sep 2026): wheat 2610, gram 5958, lentil 7390, mustard 6613 per quintal; margins 106/59/92/96%",
+    "Sugarcane: FRP 2026-27 Rs 365/qtl, A2+FL cost Rs 182/qtl (CCEA, May 2026)",
+    "Raw jute: MSP 2026-27 Rs 5925/qtl (CCEA, Feb 2026)",
+    "Cost for MSP crops: MSP / (1 + margin) x yield x 0.8 (non-irrigation share); reproduces rice, maize, millet",
+    "Tomato, brinjal, cabbage yields: NHB vegetable productivity 2022-23 (about 19, 18, 22 t/ha)",
+    "Sensitivity (Ky) marked FAO-33: Doorenbos and Kassam, FAO Irrigation and Drainage Paper 33 (values to be re-checked)",
+    "Fruit and vegetable prices, most horticulture costs, sowing calendar, soil factors, furrow and sprinkler figures: team estimates, verify before citing",
+    "Sowing windows are typical for most of India; local varieties and regions differ (check the local KVK or state agriculture university calendar)"
+  ],
+  "basis_legend": {
+    "approx. national average (verify)": "typical Indian average yield, not looked up crop by crop",
+    "estimate (verify)": "team estimate, no published source used",
+    "MSP-margin method (CACP)": "MSP / (1 + margin) x yield x 0.8, same as rice, maize and millet",
+    "FAO-33 Ky (verify)": "yield response factor from FAO paper 33, to be re-checked"
+  }
+}
