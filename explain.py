@@ -8,6 +8,7 @@ friendly note instead of an error.
 import json
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 
 W, C, Y, N = "Water use (m³)", "Cultivation cost (₹)", "Yield (kg)", "Net returns (₹)"
@@ -100,10 +101,11 @@ def _generate(model, key, prompt, low_thinking, timeout=20):
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": gen,
     }
+    url = API_URL.format(model=model) + "?key=" + urllib.parse.quote(key, safe="")
     req = urllib.request.Request(
-        API_URL.format(model=model),
+        url,
         data=json.dumps(body).encode("utf-8"),
-        headers={"Content-Type": "application/json", "x-goog-api-key": key},
+        headers={"Content-Type": "application/json"},
         method="POST",
     )
     try:
@@ -136,6 +138,9 @@ def _generate(model, key, prompt, low_thinking, timeout=20):
 def _hint(message):
     """Plain-language hint for the most common problems."""
     m = message.lower()
+    if "401" in m or "unauthenticated" in m:
+        return (" The key was not accepted. In api_key.py it should start with AIza and have "
+                "no spaces. Create a Gemini key at aistudio.google.com/apikey.")
     if "api key not valid" in m or "api_key_invalid" in m:
         return " Check the key in api_key.py."
     if "referer" in m or "referrer" in m or "permission_denied" in m or "403" in m:
