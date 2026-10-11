@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FarmTwin</title>
+  <meta name="theme-color" content="#0E1117">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.css">
+  <style>
+    html, body { margin: 0; background: #0E1117; color: #E6E8EC; font-family: system-ui, sans-serif; }
+    #boot { padding: 18vh 24px 0; text-align: center; }
+    #boot h1 { font-size: 3rem; margin: 0 0 12px; color: #C5E55C; }
+    #boot p { opacity: .8; max-width: 520px; margin: 8px auto; line-height: 1.5; }
+    #boot.error h1 { color: #FF8A7A; }
+  </style>
+</head>
+<body>
+  <div id="boot">
+    <h1>FarmTwin</h1>
+    <p id="boot-msg">Loading… The first visit needs internet and can take a minute or two.
+       After that, FarmTwin opens offline.</p>
+  </div>
+  <div id="root"></div>
+
+<script type="module">
+const boot = document.getElementById("boot");
+const msg = document.getElementById("boot-msg");
+function fail(text) { boot.classList.add("error"); msg.textContent = text; }
+
+// Files the app needs. The two model files are optional: without them the crop
+// recommendation shows a "files missing" note but everything else still works.
+const REQUIRED = ["app.py", "model.py", "explain.py", "season.py", "recommend.py",
+                  "data.json", "api_key.py"];
+const OPTIONAL = ["crop_model.joblib", "Crop_recommendation.csv"];
+
+try {
+  // 1. Service worker first, so everything downloaded from here on is saved for offline use.
+  if ("serviceWorker" in navigator) {
+    await navigator.serviceWorker.register("./sw.js");
+    await navigator.serviceWorker.ready;
+    if (!navigator.serviceWorker.controller) {
+      await Promise.race([
+        new Promise(r => navigator.serviceWorker.addEventListener("controllerchange", r, { once: true })),
+        new Promise(r => setTimeout(r, 3000)),
+      ]);
+    }
+  }
+
+  // 2. App files (served from the saved copy when offline)
+  const files = {};
+  for (const name of [...REQUIRED, ...OPTIONAL]) {
+    let res;
+    try { res = await fetch("./" + name); } catch (e) { res = null; }
+    if (res && res.ok) {
+      files[name] = /\.(py|json|csv)$/.test(name)
+        ? await res.text()
+        : new Uint8Array(await res.arrayBuffer());
+    } else if (REQUIRED.includes(name)) {
+      throw new Error("Missing file: " + name);
+    }
+  }
+
+  // 3. Start Streamlit inside the browser
+  const { mount } = await import("https://cdn.jsdelivr.net/npm/@stlite/browser@0.85.1/build/stlite.js");
+  boot.style.display = "none";
+  mount({
+    entrypoint: "app.py",
+    requirements: ["pandas", "plotly", "scikit-learn", "joblib"],
+    files,
+    streamlitConfig: {
+      "client.toolbarMode": "viewer",
+      "theme.base": "dark",
+      "theme.primaryColor": "#C5E55C",
+      "theme.backgroundColor": "#0E1117",
+      "theme.secondaryBackgroundColor": "#262730",
+      "theme.textColor": "#E6E8EC",
+      "theme.font": "sans serif",
+    },
+  }, document.getElementById("root"));
+} catch (err) {
+  console.error(err);
+  fail(navigator.onLine
+    ? "Something went wrong while loading: " + err.message
+    : "You're offline and FarmTwin hasn't been opened online on this device yet. " +
+      "Connect once and open it, then it will work offline.");
+}
+</script>
+</body>
+</html>
