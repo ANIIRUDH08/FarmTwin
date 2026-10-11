@@ -1,6 +1,6 @@
 // FarmTwin service worker: saves everything the app downloads so it opens offline.
 // Bump CACHE_VERSION whenever you upload a new version of the site.
-const CACHE_VERSION = "farmtwin-v1";
+const CACHE_VERSION = "farmtwin-v2";
 
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png",
   "./app.py", "./model.py", "./explain.py", "./season.py", "./recommend.py",

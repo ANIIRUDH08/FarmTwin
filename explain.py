@@ -106,10 +106,46 @@ def _generate(model, key, prompt, low_thinking, timeout=20):
         headers={"Content-Type": "application/json", "x-goog-api-key": key},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        data = json.loads(resp.read().decode("utf-8"))
-    parts = data["candidates"][0]["content"]["parts"]
-    return "".join(p.get("text", "") for p in parts if not p.get("thought")).strip()
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            raw = resp.read().decode("utf-8")
+    except urllib.error.HTTPError as e:
+        try:
+            msg = json.loads(e.read().decode("utf-8"))["error"]["message"]
+        except Exception:
+            msg = e.reason
+        raise RuntimeError(f"{model}: HTTP {e.code}: {msg}")
+
+    data = json.loads(raw)
+    if isinstance(data, dict) and "error" in data:        # server answered with an error
+        err = data["error"] or {}
+        raise RuntimeError(f"{model}: {err.get('code', '')} {err.get('status', '')}: "
+                           f"{err.get('message', 'unknown error')}")
+    candidates = data.get("candidates") or []
+    if not candidates:
+        reason = (data.get("promptFeedback") or {}).get("blockReason") or "empty response"
+        raise RuntimeError(f"{model}: no answer returned ({reason})")
+    cand = candidates[0]
+    parts = (cand.get("content") or {}).get("parts") or []
+    text = "".join(p.get("text", "") for p in parts if not p.get("thought")).strip()
+    if not text:
+        raise RuntimeError(f"{model}: empty answer (finishReason: {cand.get('finishReason')})")
+    return text
+
+
+def _hint(message):
+    """Plain-language hint for the most common problems."""
+    m = message.lower()
+    if "api key not valid" in m or "api_key_invalid" in m:
+        return " Check the key in api_key.py."
+    if "referer" in m or "referrer" in m or "permission_denied" in m or "403" in m:
+        return (" The key may be restricted: allow your site address "
+                "(https://YOURNAME.github.io/*) in the key's HTTP referrer list.")
+    if "429" in m or "quota" in m or "resource_exhausted" in m:
+        return " The key's free quota may be used up. Try again later."
+    if "404" in m or "not found" in m:
+        return " The model name may not be available for this key."
+    return ""
 
 
 def ai_explanation(rows, farm_summary):
@@ -128,7 +164,7 @@ def ai_explanation(rows, farm_summary):
     prompt = f"Farm: {farm_summary}\n\nScenario results:\n{table}"
 
     retry_words = ("503", "unavailable", "timed out", "timeout", "deadline", "429")
-    last_error = None
+    first_error = None
 
     for model in MODELS_TO_TRY:
         for attempt in range(2):
@@ -137,10 +173,11 @@ def ai_explanation(rows, farm_summary):
                 if text:
                     return text
             except Exception as e:           # any error: try again, then the next model
-                last_error = e
+                first_error = first_error or e
                 if any(w in str(e).lower() for w in retry_words):
                     time.sleep(1)
 
     if not is_online():                      # connection dropped while we were trying
         return OFFLINE
-    return f"(AI explanation failed: {last_error})"
+    msg = str(first_error).rstrip(". ")
+    return f"(AI explanation failed: {msg}.{_hint(msg)})"
